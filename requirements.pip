@@ -1,0 +1,9 @@
+pelican==3.7.1
+Pygments
+feedgenerator
+feedparser
+typogrify
+PyYAML
+pelican-social>=0.1.1
+pelican-frontmark
+awesome-slugify
