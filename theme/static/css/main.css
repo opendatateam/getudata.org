@@ -1,0 +1,12 @@
+.hero {
+  background: linear-gradient(to top, #002E82, #005BA3,#76AADB);
+}
+
+.hero img {
+  height: 200px;
+}
+
+ul {
+  line-height: 1.5em;
+  padding-left: 1em;
+}

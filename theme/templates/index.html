@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="section-white">
+    <div class="container">
+      <h2 class="section__title">Introduction</h2>
+      <div class="row">
+        <div>
+          <h3>What is udata</h3>
+          <p>udata is an open source and customizable data portal and catalog aimed at organizations wanting to publish their data or host for others.</p>
+        </div>
+
+        <div>
+          <h3>Why udata</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <div>
+          <h3>How to contribute</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-grey">
+    <div class="container">
+      <h2 class="section__title">Features</h2>
+      <div class="row">
+        <div>
+          <h3>Plugins</h3>
+          <ul>
+            <li>
+              <a href="https://github.com/opendatateam/udata-ckan">CKAN support</a>
+            </li>
+            <li>
+              <a href="https://github.com/opendatateam/udata-ods">Opendatasoft support</a>
+            </li>
+            <li>
+              <a href="https://github.com/opendatateam/udata-croquemort">Croquement link checker</a>
+            </li>
+            <li>
+              <a href="https://github.com/opendatateam/udata-piwik">Piwik/Matomo integration</a>
+            </li>
+            <li>
+              <a href="https://github.com/opendatateam/udata-recommendations">Static dataset recommandations</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Themes and local customization</h3>
+          <ul>
+            <li>
+              <a href="https://github.com/etalab/udata-gouvfr">udata-gouvfr</a>: (french theme and plugins)
+            </li>
+            <li>
+              <a href="https://github.com/opendatalu/gouvlu/">gouvlu</a>: (luxembourgish theme and plugins)
+            </li>
+            <li>
+              <a href="https://github.com/amagovpt/gouvpt">gouvpt</a>: (portuguese theme and plugins)
+            </li>
+            <li>
+              <a href="https://github.com/etalab/udata-geoplatform">udata-geoplatform</a>: for geo.data.gouv.fr integration
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Showcase</h3>
+          <ul>
+            <li>
+              <a href="www.data.gouv.fr">www.data.gouv.fr</a>: French national open data portal
+            </li>
+            <li>
+              <a href="data.public.lu">data.public.lu</a>: Luxembourgish national open data portal
+            </li>
+            <li>
+              <a href="dados.gov.pt">dados.gov.pt</a>: Portuguese national open data portal
+            </li>
+            <li>
+              <a href="data.gov.rs">data.gov.rs</a>: Serbian national open data portal
+            </li>
+            <li>
+              <a href="www.data4tunisia.org">www.data4tunisia.org</a>: A civil tunisian open data portal
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include "blog.html" %}
+
+{% endblock content %}

@@ -1,0 +1,14 @@
+<footer id="contentinfo" class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__logo">
+      <h2>opendatateam</h2>
+      {% if SOCIAL %}
+        <ul class="footer__social">
+          {% for name, link in SOCIAL %}
+            <li><a href="{{link}}" title="{{name}}"><svg class="icon icon-{{name}}"><use xlink:href="#{{name}}"></use></svg></a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</footer>
