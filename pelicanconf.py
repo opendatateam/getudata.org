@@ -14,7 +14,7 @@ TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = 'en'
 
-# THEME = 'theme'
+THEME = 'theme'
 
 PATH = os.path.dirname(__file__)
 OUTPUT_PATH = os.path.join(PATH, 'output')
@@ -115,5 +115,5 @@ RELATED_POSTS_MAX = 3
 SOCIAL = (
     ('github', 'https://github.com/opendatateam'),
     ('twitter', 'https://twitter.com/udata_project'),
-    ('Gitter', 'https://gitter.im/opendatateam/udata'),
+    ('gitter', 'https://gitter.im/opendatateam/udata'),
 )

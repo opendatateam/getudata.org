@@ -1,0 +1,70 @@
+body {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", "Trebuchet MS", sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+  margin-top: 2em;
+}
+
+.lead-text {
+  font-size: 1.25em;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+.subtitle {
+  color: var(--dark-grey);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-quote {
+  background-color: var(--theme-background-grey);
+  border-left: 8px solid var(--theme-border-lighter);
+  padding: 4px 0 4px 25px;
+}

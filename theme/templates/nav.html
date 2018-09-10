@@ -1,0 +1,26 @@
+<header class="navbar" role="navigation">
+  <div class="navbar__container">
+    <a class="navbar__home" href="{{ SITEURL }}/">
+      <img class="navbar__logo" src="{{SITEURL}}/theme/images/logo.svg" />
+    </a>
+
+    <nav>
+      <ul class="nav__links">
+        {% for title, link in MENUITEMS %}
+          <li class="nav__item"><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+        {% if DISPLAY_PAGES_ON_MENU %}
+          {% for p in pages %}
+            <li class="nav__item{% if p == page %} active{% endif %}""><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+          {% endfor %}
+        {% else %}
+          {% if DISPLAY_CATEGORIES_ON_MENU %}
+            {% for cat, null in categories %}
+              <li{% if cat == category %} class="active nav__item"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+            {% endfor %}
+          {% endif %}
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</header>
