@@ -63,10 +63,8 @@ PLUGINS = [
     'jinja_tools',
 ]
 
-DATA_COMMON = 'data'
 DATA_PATHS = [
-    DATA_COMMON,
-    os.path.join(DATA_COMMON, DEFAULT_LANG),
+    'data',
 ]
 
 DATA = [

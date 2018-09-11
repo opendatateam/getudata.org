@@ -8,7 +8,7 @@ import sys
 
 from datetime import datetime
 
-from invoke import run as raw_run, task
+from invoke import task
 
 from pelican import Pelican, log
 
@@ -27,8 +27,6 @@ TASKS_ROOT = os.path.dirname(__file__)
 ROOT = os.path.abspath(os.path.join(TASKS_ROOT, '..'))
 
 CONF_FILE = os.path.join(ROOT, 'pelicanconf.py')
-
-THEME = 'arisn'
 
 # Port for `serve`
 PORT = 5000
@@ -51,11 +49,6 @@ def jinja(template, filename, **ctx):
     with open(filename, 'wb') as out:
         data = template.render(**ctx)
         out.write(data.encode('utf-8'))
-
-
-def run(cmd, *args, **kwargs):
-    '''Run a command ensuring cwd is project root'''
-    return raw_run('cd {0} && {1}'.format(ROOT, cmd), *args, **kwargs)
 
 
 @task
@@ -153,9 +146,6 @@ def watch(ctx, verbose=False):
     server = Server()
     server.watch(CONF_FILE, compile)
 
-    server.watch('theme', compile)
-    server.watch('local_plugins', reload_and_compile)
-
     DATA_PATHS = getattr(settings, 'DATA_PATHS', [])
     for root in set(DATA_PATHS):
         for data in getattr(settings, 'DATA', []):
@@ -163,7 +153,7 @@ def watch(ctx, verbose=False):
             if os.path.exists(path):
                 server.watch(path, compile)
 
-    paths = settings.ARTICLE_PATHS + settings.PAGE_PATHS
+    paths = settings.ARTICLE_PATHS + settings.PAGE_PATHS + settings.STATIC_PATHS
     for path in paths:
         server.watch(path, compile)
 
