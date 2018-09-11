@@ -56,6 +56,9 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: Expose user pip-installed binaries on path
+          command: echo 'export PATH=$HOME/.local/bin:$PATH' >> $BASH_ENV
+      - run:
           name: Deploy to github pages
           command: |
             pip install --user ghp-import
