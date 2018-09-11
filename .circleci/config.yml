@@ -63,7 +63,7 @@ jobs:
           command: |
             pip install --user ghp-import
             cp -R .circleci output/
-            ghp-import --no-jekyll --cname=getudata.org -m "Deploy getudata.org" --push output
+            ghp-import --cname=getudata.org -m "Deploy getudata.org" --push output
 
 workflows:
   version: 2
