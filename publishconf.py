@@ -27,12 +27,10 @@ PAGE_SAVE_AS = '{slug}/index.html'
 
 DELETE_OUTPUT_DIRECTORY = True
 
-# Following items are often useful when publishing
-
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
-
 PLUGINS += (
     'image_optimizer',
     'gzip_cache',
 )
+
+PIWIK_URL = 'stats.data.gouv.fr'
+PIWIK_SITE_ID = 60
