@@ -6,41 +6,32 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
       - image: circleci/python:3.6.1
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
     working_directory: ~/repo
 
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "39:e9:18:49:de:6f:20:27:9d:4a:24:48:12:1e:99:a3"
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "requirements.pip" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          - build-v1-{{ arch }}-{{ checksum "requirements.pip" }}
+          - build-v1-{{ arch }}-{{ .Branch }}
 
       - run:
           name: install dependencies
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip install -r requirements.pip ghp-import
+            pip install -r requirements.pip
 
       - save_cache:
           paths:
             - ./venv
-          key: v1-dependencies-{{ checksum "requirements.pip" }}
+          key: build-v1-{{ arch }}-{{ checksum "requirements.pip" }}
+
+      - save_cache:
+          paths:
+            - ./venv
+          key: build-v1-{{ arch }}-{{ .Branch }}
 
       - run:
           name: Build site
@@ -48,11 +39,49 @@ jobs:
             . venv/bin/activate
             inv build
 
+      - persist_to_workspace:
+          root: .
+          paths:
+          - output
+
+  deploy:
+    docker:
+      - image: circleci/python:3.6.1
+    working_directory: ~/repo
+
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "39:e9:18:49:de:6f:20:27:9d:4a:24:48:12:1e:99:a3"
+      - checkout
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+
       - run:
           name: Deploy to github pages
           command: |
             . venv/bin/activate
             ghp-import -n --push output
-    branches:
-      ignore:
-        - gh-pages
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      # Build on any branch except github pages
+      - build:
+          filters:
+            branches:
+              ignore: gh-pages
+      # Deploy only on master
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
