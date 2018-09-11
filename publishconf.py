@@ -28,7 +28,7 @@ PAGE_SAVE_AS = '{slug}/index.html'
 DELETE_OUTPUT_DIRECTORY = True
 
 PLUGINS += (
-    'image_optimizer',
+    # 'image_optimizer',
     'gzip_cache',
 )
 
