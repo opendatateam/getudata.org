@@ -68,7 +68,7 @@ DATA_PATHS = [
 ]
 
 DATA = [
-    'config.yml',
+    'identity.yml',
     'showcase',
     'plugins',
 ]
