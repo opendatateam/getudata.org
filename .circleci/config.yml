@@ -63,6 +63,8 @@ jobs:
           command: |
             pip install --user ghp-import
             cp -R .circleci output/
+            git config --global user.name CircleCI
+            git config --global user.email circleci@opendata.team
             ghp-import --no-jekyll --cname=getudata.org -m "Deploy getudata.org" --push output
 
 workflows:
