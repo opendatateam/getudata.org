@@ -4,20 +4,12 @@
     <div class="container">
       <h2 class="section__title">Introduction</h2>
       <div class="row">
+        {% for item in data.home.introduction %}
         <div>
-          <h3>What is udata</h3>
-          <p>udata is an open source and customizable data portal and catalog aimed at organizations wanting to publish their data or host for others.</p>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.details }}</p>
         </div>
-
-        <div>
-          <h3>Why udata</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-
-        <div>
-          <h3>How to contribute</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -26,6 +18,7 @@
     <div class="container">
       <h2 class="section__title">Features</h2>
       <div class="row">
+
         <div>
           <h3>Plugins</h3>
           <ul>
@@ -55,6 +48,7 @@
             {% endfor %}
           </ul>
         </div>
+
       </div>
     </div>
   </section>
