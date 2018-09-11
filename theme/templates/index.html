@@ -29,21 +29,9 @@
         <div>
           <h3>Plugins</h3>
           <ul>
-            <li>
-              <a href="https://github.com/opendatateam/udata-ckan">CKAN support</a>
-            </li>
-            <li>
-              <a href="https://github.com/opendatateam/udata-ods">Opendatasoft support</a>
-            </li>
-            <li>
-              <a href="https://github.com/opendatateam/udata-croquemort">Croquement link checker</a>
-            </li>
-            <li>
-              <a href="https://github.com/opendatateam/udata-piwik">Piwik/Matomo integration</a>
-            </li>
-            <li>
-              <a href="https://github.com/opendatateam/udata-recommendations">Static dataset recommandations</a>
-            </li>
+            {% for plugin in data.plugins %}
+            <li><a href="{{ plugin.homepage }}">{{plugin.tagline}}</a></li>
+            {% endfor %}
           </ul>
         </div>
 

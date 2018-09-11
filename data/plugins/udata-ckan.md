@@ -1,4 +1,7 @@
 ---
-repository: https://github.com/opendatateam/udata-ckan
+name: udata-ckan
+tagline: CKAN integration
+homepage: https://github.com/opendatateam/udata-ckan
 ---
-CKAN support
+
+Provide [CKAN](https://ckan.org/) harvesting support
