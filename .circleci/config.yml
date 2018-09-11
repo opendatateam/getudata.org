@@ -58,7 +58,7 @@ jobs:
       - run:
           name: Deploy to github pages
           command: |
-            pip install ghp-import
+            pip install --user ghp-import
             ghp-import -n --push output
 
 workflows:
