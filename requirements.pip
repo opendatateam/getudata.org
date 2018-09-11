@@ -7,3 +7,7 @@ PyYAML
 pelican-social>=0.1.1
 pelican-frontmark
 awesome-slugify
+invoke
+
+# Until https://github.com/voronind/awesome-slugify/issues/35 is fixed
+Unidecode<0.05,>=0.04.14
