@@ -21,11 +21,11 @@
       </article>
     {% endfor %}
     {% if articles_page.has_other_pages() %}
-        {% include 'pagination.html' %}
+        {% include 'includes/pagination.html' %}
     {% endif %}
   </div>
 </section><!-- /#content -->
 
 <div class="extra-pagination">
-  {% include "pagination.html" %}
+  {% include "includes/pagination.html" %}
 </div>
