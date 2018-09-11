@@ -134,6 +134,7 @@ def compile():
 @task
 def watch(ctx, verbose=False):
     '''Serve the blog and watch changes'''
+    os.chdir(ROOT)
     from livereload import Server
 
     settings = get_settings()
@@ -145,6 +146,7 @@ def watch(ctx, verbose=False):
     compile()
     server = Server()
     server.watch(CONF_FILE, compile)
+    server.watch('theme', compile)
 
     DATA_PATHS = getattr(settings, 'DATA_PATHS', [])
     for root in set(DATA_PATHS):
