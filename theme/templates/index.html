@@ -56,21 +56,12 @@
         <div>
           <h3>Showcase</h3>
           <ul>
+            {% for instance in data.showcase %}
             <li>
-              <a href="www.data.gouv.fr">www.data.gouv.fr</a>: French national open data portal
+              <a href="{{ instance.homepage }}">{{ instance.name }}</a>:
+              {{ instance.tagline }}
             </li>
-            <li>
-              <a href="data.public.lu">data.public.lu</a>: Luxembourgish national open data portal
-            </li>
-            <li>
-              <a href="dados.gov.pt">dados.gov.pt</a>: Portuguese national open data portal
-            </li>
-            <li>
-              <a href="data.gov.rs">data.gov.rs</a>: Serbian national open data portal
-            </li>
-            <li>
-              <a href="www.data4tunisia.org">www.data4tunisia.org</a>: A civil tunisian open data portal
-            </li>
+            {% endfor %}
           </ul>
         </div>
       </div>
