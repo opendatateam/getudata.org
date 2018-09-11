@@ -29,7 +29,7 @@
         <div>
           <h3>Plugins</h3>
           <ul>
-            {% for plugin in data.plugins %}
+            {% for plugin in data.plugins if not plugin.is_specific %}
             <li><a href="{{ plugin.homepage }}">{{plugin.tagline}}</a></li>
             {% endfor %}
           </ul>
@@ -38,18 +38,9 @@
         <div>
           <h3>Themes and local customization</h3>
           <ul>
-            <li>
-              <a href="https://github.com/etalab/udata-gouvfr">udata-gouvfr</a>: (french theme and plugins)
-            </li>
-            <li>
-              <a href="https://github.com/opendatalu/gouvlu/">gouvlu</a>: (luxembourgish theme and plugins)
-            </li>
-            <li>
-              <a href="https://github.com/amagovpt/gouvpt">gouvpt</a>: (portuguese theme and plugins)
-            </li>
-            <li>
-              <a href="https://github.com/etalab/udata-geoplatform">udata-geoplatform</a>: for geo.data.gouv.fr integration
-            </li>
+              {% for plugin in data.plugins if plugin.is_specific %}
+              <li><a href="{{ plugin.homepage }}">{{ plugin.name }}</a>: {{ plugin.tagline }}</li>
+              {% endfor %}
           </ul>
         </div>
 
