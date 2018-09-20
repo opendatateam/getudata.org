@@ -2,6 +2,10 @@
   background: linear-gradient(to top, #002E82, #005BA3,#76AADB);
 }
 
+p.hero__tagline {
+  color: #FFF;
+}
+
 .hero img {
   height: 200px;
 }
