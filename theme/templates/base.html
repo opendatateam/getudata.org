@@ -40,7 +40,7 @@
 <body id="index" class="home">
   {% include 'includes/svg.html' %}
   {% include 'includes/nav.html' %}
-  {% include 'includes/hero.html' %}
+  {% block hero %}{% include 'includes/hero.html' %}{% endblock %}
 
   {% block content %}
   {% endblock %}
