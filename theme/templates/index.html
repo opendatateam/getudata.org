@@ -36,19 +36,25 @@
               {% endfor %}
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div>
-          <h3>Showcase</h3>
-          <ul>
-            {% for instance in data.showcase %}
-            <li>
-              <a href="{{ instance.homepage }}">{{ instance.name }}</a>:
-              {{ instance.tagline }}
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-
+  <section class="section-color">
+    <div class="container showcase__container">
+      <h2 class="section__title">Showcase</h2>
+      <div class="cards">
+        {% for instance in data.showcase %}
+        <a class="card showcase__item" href="{{ instance.homepage }}">
+          <div class="card__cover">
+            <img src="{{ instance.image }}" />
+          </div>
+          <article class="card__content">
+            <h3>{{ instance.name }}</h3>
+            <p>{{ instance.tagline }}</p>
+          </article>
+        </a>
+        {% endfor %}
       </div>
     </div>
   </section>
