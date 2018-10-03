@@ -1089,3 +1089,84 @@ a.article__link:hover {
   color: #53657d;
 }
 
+.card, a.card {
+  background: #fff;
+  color: #333;
+  border-radius: 2px;
+  border: 1px solid lightgray;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  text-decoration: none;
+}
+
+a.card:hover {
+  border: 1px solid gray;
+}
+
+.card__cover {
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card__cover img {
+  object-fit: cover; /* will not work on IE and Edge < 16 */
+  height: 100%;
+  width: 100%;
+}
+
+.card__content {
+  padding: 2em;
+  flex-grow: 1;
+}
+
+.card__content h3 {
+  margin: 0;
+}
+
+.card__content .card__meta {
+  color: darkslategray;
+}
+
+.card__content .card__meta time::after {
+  content: " • ";
+}
+
+.card__content :last-child {
+  margin-bottom: 0;
+}
+
+.card__extra {
+  border-top: 1px solid var(--theme-border);
+  padding: 1em;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards .card {
+  flex: 0 0 calc(33% - 2em);
+  margin: 1em;
+}
+
+/* Small devices */
+@media  (max-width: 480px) {
+  .cards .card {
+    flex: 0 0 100%;
+  }
+}
+
+/* Large screens */
+@media only screen  and (min-width: 1824px) {
+  .cards .card {
+    flex: 0 0 calc(25% - 2em);
+  }
+}
