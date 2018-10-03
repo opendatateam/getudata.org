@@ -8,6 +8,7 @@ p.hero__tagline {
 
 .hero img {
   height: 200px;
+  max-width: 100%;
 }
 
 ul {
