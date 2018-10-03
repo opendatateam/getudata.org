@@ -3,6 +3,7 @@
 <head>
   <title>udata</title>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://getudata.org/theme/css/fonts.css">
   <link rel="stylesheet" href="https://getudata.org/theme/css/template.css">
@@ -34,25 +35,25 @@
       </ul>
     </nav>
   </div>
-</header>
-<section class="article article__full">
-  <div class="hero article__hero">
-    <div class="article__container">
-      <h1 class="article__title">Hello World</h1>
-      <div class="article__meta">
-        <time datetime="2018-08-28T17:59:00+02:00">
-          Tue 28 August 2018
-        </time>
-       
-      </div>
+</header><section class="hero article__hero">
+  <div class="article__container">
+    <h1 class="article__title">Hello World</h1>
+    <div class="article__meta">
+      <time datetime="2018-08-28T17:59:00+02:00">
+        Tue 28 August 2018
+      </time>
+      
     </div>
   </div>
-  <div class="article__content">
-    <div class="article__container">
-      <p>test</p>
-    </div><!-- /.entry-content -->
-  </div>
 </section>
+
+  <section class="article article__full">
+    <div class="article__content">
+      <div class="article__container">
+        <p>test</p>
+      </div><!-- /.entry-content -->
+    </div>
+  </section>
 <footer id="contentinfo" class="footer" role="contentinfo">
   <div class="container">
     <div class="footer__logo">
@@ -64,5 +65,20 @@
         </ul>
     </div>
   </div>
-</footer></body>
+</footer><!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.data.gouv.fr/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '60']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.data.gouv.fr/piwik.php?idsite=60" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+</body>
 </html>
