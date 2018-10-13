@@ -8,5 +8,8 @@ tags:
 slug: demo
 lang: en
 authors: Open Data Team
-summary: Just a demo page
+summary: Try udata on our demo instance
+template: demo
 ---
+
+<center><strong>🚧 Soon 🚧</strong></center>

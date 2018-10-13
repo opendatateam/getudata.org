@@ -1,7 +1,5 @@
-{% extends 'base.html' %}
-  <section class="section-white">
-    <div class="container">
-      {% block content %}
-      {% endblock content %}
-    </div>
-  </section>
+{% extends 'page.html' %}
+
+{% block page_content %}
+  {{ page.content }}
+{% endblock %}

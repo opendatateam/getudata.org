@@ -10,6 +10,7 @@
 {% block content %}
   <section class="section-white">
     <div class="container">
+      {% block page_content %}
       {% import 'translations.html' as translations with context %}
       {{ translations.translations_for(page) }}
 
@@ -20,6 +21,7 @@
           Last updated: {{ page.locale_modified }}
           </p>
       {% endif %}
+      {% endblock %}
     </div>
   </section>
 {% endblock %}
