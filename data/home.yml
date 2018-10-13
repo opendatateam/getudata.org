@@ -10,10 +10,11 @@ introduction:
   -
     title: Why udata ?
     details: >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      We wanted an open data portal for a more contributive and inclusive open data.
+      As none satisfied our needs, we wrote a new one and udata was born.
   -
     title: How to contribute ?
     details: >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      You can contribute by fixing bugs, implement new features or translating strings.
+      Head over the <a href="https://udata.readthedocs.io/en/stable/contributing-guide/">contributing guide</a>
+      for more details.
