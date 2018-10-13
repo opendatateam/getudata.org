@@ -415,6 +415,12 @@ span.navbar__domain {
 }
 
 @media (max-width: 749px) {
+  a.navbar__home {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
   .navbar__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

@@ -1,15 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>udata</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+<title>getudata.org</title>
+
+<!-- Standard HTML metadata -->
+<meta name="keywords" content="opendata,data">
+<meta name="description" content="Open, customizable and skinnable platform dedicated to open data">
+<meta name="author" content="Open Data Team">
+<meta name="generator" content="Pelican" />
+
+<!-- Standard favicons and colors -->
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" type="image/png" href="https://getudata.org/theme/favicons/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="https://getudata.org/theme/favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://getudata.org/theme/favicons/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://getudata.org/theme/favicons/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://getudata.org/theme/favicons/favicon-128.png" sizes="128x128" />
+<link rel="icon" type="image/x-icon" href="https://getudata.org/theme/favicons/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="https://getudata.org/theme/favicons/favicon.ico" />
+<!-- Apple and Safari favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://getudata.org/theme/favicons/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://getudata.org/theme/favicons/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://getudata.org/theme/favicons/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://getudata.org/theme/favicons/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://getudata.org/theme/favicons/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://getudata.org/theme/favicons/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://getudata.org/theme/favicons/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://getudata.org/theme/favicons/apple-touch-icon-152x152.png" />
+<link rel="mask-icon" href="https://getudata.org/theme/favicons/safari-pinned-tab.svg" color="#5bbad5">
+
+<!-- Microsoft/Metro tiles -->
+<meta name="application-name" content="getudata.org"/>
+<meta name="msapplication-TileColor" content="#2d89ef" />
+<meta name="msapplication-TileImage" content="https://getudata.org/theme/favicons/mstile-144x144" />
+<meta name="msapplication-square70x70logo" content="https://getudata.org/theme/favicons/mstile-70x70" />
+<meta name="msapplication-square150x150logo" content="https://getudata.org/theme/favicons/mstile-150x150" />
+<meta name="msapplication-wide310x150logo" content="https://getudata.org/theme/favicons/mstile-310x150" />
+<meta name="msapplication-square310x310logo" content="https://getudata.org/theme/favicons/mstile-310x310" />
+
+<!-- OpenGraph -->
+<meta property="og:title" content="getudata.org" />
+<meta property="og:site_name" content="getudata.org" />
+<meta property="og:description" content="Open, customizable and skinnable platform dedicated to open data" />
+<meta property="og:locale" content="en" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="https://twitter.com/udata_project" /><meta name="twitter:title" content="getudata.org" />
+<meta name="twitter:description" content="Open, customizable and skinnable platform dedicated to open data" />
+
+
+<!-- Feeds -->
+<link href="https://getudata.org/feeds/all.atom" type="application/atom+xml" rel="alternate" title="getudata.org" />
+
 
   <link rel="stylesheet" href="https://getudata.org/theme/css/fonts.css">
   <link rel="stylesheet" href="https://getudata.org/theme/css/template.css">
   <link rel="stylesheet" href="https://getudata.org/theme/css/typography.css">
   <link rel="stylesheet" href="https://getudata.org/theme/css/main.css">
-  <link href="https://getudata.org/feeds/all.atom" type="application/atom+xml" rel="alternate" title="udata Full Atom Feed" />
 </head>
 
 <body id="index" class="home">
@@ -29,8 +81,13 @@
 
     <nav>
       <ul class="nav__links">
-            <li class="nav__item""><a href="https://getudata.org/demo/">Demo</a></li>
-            <li class="nav__item""><a href="https://getudata.org/faq/">Frequently asked questions</a></li>
+          <li class="nav__item"><a href="https://udata.readthedocs.io">Documentation</a></li>
+            <li class="nav__item"">
+              <a href="https://getudata.org/demo/">Demo</a>
+            </li>
+            <li class="nav__item"">
+              <a href="https://getudata.org/faq/">FAQ</a>
+            </li>
       </ul>
     </nav>
   </div>
@@ -51,12 +108,12 @@
         </div>
         <div>
           <h3>Why udata ?</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <p>We wanted an open data portal for a more contributive and inclusive open data. As none satisfied our needs, we wrote a new one and udata was born.
 </p>
         </div>
         <div>
           <h3>How to contribute ?</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <p>You can contribute by fixing bugs, implement new features or translating strings. Head over the <a href="https://udata.readthedocs.io/en/stable/contributing-guide/">contributing guide</a> for more details.
 </p>
         </div>
       </div>
@@ -71,11 +128,12 @@
         <div>
           <h3>Plugins</h3>
           <ul>
-            <li><a href="https://github.com/opendatateam/udata-croquemort">Croquemort Link checker</a></li>
-            <li><a href="https://github.com/opendatateam/udata-ods">Open Data Soft integration</a></li>
-            <li><a href="https://github.com/opendatateam/udata-ckan">CKAN integration</a></li>
-            <li><a href="https://github.com/opendatateam/udata-recommendations">Static datasets recommendations</a></li>
             <li><a href="https://github.com/opendatateam/udata-piwik">Piwik/Matomo integration</a></li>
+            <li><a href="https://github.com/opendatateam/udata-ods">Open Data Soft integration</a></li>
+            <li><a href="https://github.com/opendatateam/udata-recommendations">Static datasets recommendations</a></li>
+            <li><a href="https://github.com/opendatateam/udata-ckan">CKAN integration</a></li>
+            <li><a href="https://github.com/opendatateam/udata-tabular-preview">Tabular data previews</a></li>
+            <li><a href="https://github.com/opendatateam/udata-croquemort">Croquemort Link checker</a></li>
           </ul>
         </div>
 
@@ -83,9 +141,9 @@
           <h3>Themes and local customization</h3>
           <ul>
               <li><a href="https://github.com/etalab/udata-gouvfr">udata-gouvfr</a>: french theme and plugins</li>
-              <li><a href="https://github.com/opendatalu/gouvlu/">udata-gouvfr</a>: luxembourgish theme and plugins</li>
-              <li><a href="https://github.com/amagovpt/gouvpt">gouvpt</a>: portuguese theme and plugins</li>
               <li><a href="https://github.com/etalab/udata-geoplatform">udata-geoplatform</a>: Integration with geo.data.gouv.fr</li>
+              <li><a href="https://github.com/amagovpt/gouvpt">gouvpt</a>: portuguese theme and plugins</li>
+              <li><a href="https://github.com/opendatalu/gouvlu/">udata-gouvfr</a>: luxembourgish theme and plugins</li>
           </ul>
         </div>
       </div>
@@ -96,22 +154,13 @@
     <div class="container showcase__container">
       <h2 class="section__title">Showcase</h2>
       <div class="cards">
-        <a class="card showcase__item" href="https://www.data4tunisia.org/">
+        <a class="card showcase__item" href="https://data.public.lu/">
           <div class="card__cover">
-            <img src="images/showcase/data4tunisia.org.png" />
+            <img src="images/showcase/data.public.lu.png" />
           </div>
           <article class="card__content">
-            <h3>data4tunisia.org</h3>
-            <p>A civil tunisian open data portal</p>
-          </article>
-        </a>
-        <a class="card showcase__item" href="https://dados.gov.pt/">
-          <div class="card__cover">
-            <img src="images/showcase/dados.gov.pt.png" />
-          </div>
-          <article class="card__content">
-            <h3>dados.gov.pt</h3>
-            <p>Portuguese national open data portal</p>
+            <h3>data.public.lu</h3>
+            <p>Luxembourgish national open data portal</p>
           </article>
         </a>
         <a class="card showcase__item" href="https://www.data.gouv.fr">
@@ -132,13 +181,22 @@
             <p>Serbian national open data portal</p>
           </article>
         </a>
-        <a class="card showcase__item" href="https://data.public.lu/">
+        <a class="card showcase__item" href="https://dados.gov.pt/">
           <div class="card__cover">
-            <img src="images/showcase/data.public.lu.png" />
+            <img src="images/showcase/dados.gov.pt.png" />
           </div>
           <article class="card__content">
-            <h3>data.public.lu</h3>
-            <p>Luxembourgish national open data portal</p>
+            <h3>dados.gov.pt</h3>
+            <p>Portuguese national open data portal</p>
+          </article>
+        </a>
+        <a class="card showcase__item" href="https://www.data4tunisia.org/">
+          <div class="card__cover">
+            <img src="images/showcase/data4tunisia.org.png" />
+          </div>
+          <article class="card__content">
+            <h3>data4tunisia.org</h3>
+            <p>A civil tunisian open data portal</p>
           </article>
         </a>
       </div>
