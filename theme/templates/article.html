@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
+{% set meta = {
+  'title': article.title,
+  'lang': article.lang,
+  'description': article.summary|default('')|striptags,
+  'image': article.image,
+  'tags': article.tags|default([]),
+} %}
+
 {% block hero %}
 <section class="hero article__hero">
   <div class="article__container">

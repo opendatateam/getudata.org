@@ -1,7 +1,11 @@
 {% extends "base.html" %}
-{% block html_lang %}{{ page.lang }}{% endblock %}
-
-{% block title %}{{ SITENAME }} - {{ page.title }}{%endblock%}
+{% set meta = {
+  'title': page.title,
+  'lang': page.lang,
+  'description': page.summary|default('')|striptags,
+  'image': page.image,
+  'tags': page.tags|default([]),
+} %}
 
 {% block content %}
   <section class="section-white">

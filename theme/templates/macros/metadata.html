@@ -1,0 +1,91 @@
+{% macro metadata(meta) %}
+{% set title = meta.title|default(SITENAME) %}
+{% set full_title = ' - '.join((SITENAME, title)) if meta.title else SITENAME %}
+{% set description = meta.description|default(data.identity.tagline) %}
+{% set tags = TAGS|list + meta.tags|default([])|list %}
+
+<title>{{ full_title }}</title>
+
+<!-- Standard HTML metadata -->
+<meta name="keywords" content="{{ tags|join(',') }}">
+<meta name="description" content="{{ description }}">
+<meta name="author" content="{{ AUTHOR }}">
+<meta name="generator" content="Pelican" />
+
+<!-- Standard favicons and colors -->
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" type="image/png" href="{{ SITEURL }}/theme/favicons/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="{{ SITEURL }}/theme/favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="{{ SITEURL }}/theme/favicons/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="{{ SITEURL }}/theme/favicons/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="{{ SITEURL }}/theme/favicons/favicon-128.png" sizes="128x128" />
+<link rel="icon" type="image/x-icon" href="{{ SITEURL }}/theme/favicons/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="{{ SITEURL }}/theme/favicons/favicon.ico" />
+<!-- Apple and Safari favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ SITEURL }}/theme/favicons/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ SITEURL }}/theme/favicons/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ SITEURL }}/theme/favicons/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ SITEURL }}/theme/favicons/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ SITEURL }}/theme/favicons/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ SITEURL }}/theme/favicons/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ SITEURL }}/theme/favicons/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ SITEURL }}/theme/favicons/apple-touch-icon-152x152.png" />
+<link rel="mask-icon" href="{{ SITEURL }}/theme/favicons/safari-pinned-tab.svg" color="#5bbad5">
+
+<!-- Microsoft/Metro tiles -->
+<meta name="application-name" content="{{ full_title }}"/>
+<meta name="msapplication-TileColor" content="#2d89ef" />
+<meta name="msapplication-TileImage" content="{{ SITEURL }}/theme/favicons/mstile-144x144" />
+<meta name="msapplication-square70x70logo" content="{{ SITEURL }}/theme/favicons/mstile-70x70" />
+<meta name="msapplication-square150x150logo" content="{{ SITEURL }}/theme/favicons/mstile-150x150" />
+<meta name="msapplication-wide310x150logo" content="{{ SITEURL }}/theme/favicons/mstile-310x150" />
+<meta name="msapplication-square310x310logo" content="{{ SITEURL }}/theme/favicons/mstile-310x310" />
+
+<!-- OpenGraph -->
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:site_name" content="{{ SITENAME }}" />
+<meta property="og:description" content="{{ description }}" />
+<meta property="og:locale" content="{{ meta.lang or DEFAULT_LANG }}" />
+{% if meta.image %}
+<meta property="og:image" content="{{ meta.image }}" />
+{% endif %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+{% if data.identity.social.twitter %}<meta name="twitter:site" content="{{ data.identity.social.twitter }}" />{% endif %}
+<meta name="twitter:title" content="{{ full_title }}" />
+<meta name="twitter:description" content="{{ description }}" />
+{% if meta.image %}
+<meta name="twitter:image" content="{{ meta.image }}" />
+{% endif %}
+
+{% if JSON_LD %}
+<!-- JSON-LD -->
+<script type="application/ld+json">{{ JSON_LD | json }}</script>
+{% endif %}
+
+<!-- Feeds -->
+{# 
+  The `or` condition ensure that each feed is present once.
+  The `*_FEED_ALL_*` include the entire content in the feed
+  whereas the `*_FEED_*` only include the summary
+#}
+{% if FEED_ALL_ATOM or FEED_ATOM %}
+<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM or FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }}" />
+{% endif %}
+{% if FEED_ALL_RSS or FEED_RSS %}
+<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS or FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }}" />
+{% endif %}
+{% if category and (CATEGORY_FEED_ALL_ATOM or CATEGORY_FEED_ATOM) %}
+<link href="{{ FEED_DOMAIN }}/{{ (CATEGORY_FEED_ATOM_URL or CATEGORY_FEED_ATOM) | format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} - {{ category }} category" />
+{% endif %}
+{% if category and (CATEGORY_FEED_ALL_RSS or CATEGORY_FEED_RSS) %}
+<link href="{{ FEED_DOMAIN }}/{{ (CATEGORY_FEED_RSS_URL or CATEGORY_FEED_RSS) | format(category.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} - {{ category }} category" />
+{% endif %}
+{% if tag and (TAG_FEED_ALL_ATOM or TAG_FEED_ATOM) %}
+<link href="{{ FEED_DOMAIN }}/{{ (TAG_FEED_ATOM_URL or TAG_FEED_ATOM)|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} - {{ tag }} tag" />
+{% endif %}
+{% if tag and (TAG_FEED_ALL_RSS or TAG_FEED_RSS) %}
+<link href="{{ FEED_DOMAIN }}/{{ (TAG_FEED_RSS_URL or TAG_FEED_RSS)|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} - {{ tag }} tag" />
+{% endif %}
+{% endmacro %}

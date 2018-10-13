@@ -2,9 +2,7 @@
 import os
 
 AUTHOR = 'Open Data Team'
-SITENAME = 'udata'
-
-SITEDESCRIPTION = 'Bla bla bla'
+SITENAME = 'getudata.org'
 
 TAGS = ('opendata', 'data')
 
@@ -36,11 +34,6 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
 
 DEFAULT_PAGINATION = 10
 
@@ -110,12 +103,6 @@ SITEMAP = {
 }
 
 RELATED_POSTS_MAX = 3
-
-SOCIAL = (
-    ('github', 'https://github.com/opendatateam'),
-    ('twitter', 'https://twitter.com/udata_project'),
-    ('gitter', 'https://gitter.im/opendatateam/udata'),
-)
 
 MENUITEMS = (
     ('Documentation', 'https://udata.readthedocs.io'),
