@@ -116,3 +116,7 @@ SOCIAL = (
     ('twitter', 'https://twitter.com/udata_project'),
     ('gitter', 'https://gitter.im/opendatateam/udata'),
 )
+
+MENUITEMS = (
+    ('Documentation', 'https://udata.readthedocs.io'),
+)
