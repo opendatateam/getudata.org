@@ -33,4 +33,4 @@ PLUGINS += (
 PIWIK_URL = 'stats.data.gouv.fr'
 PIWIK_SITE_ID = 60
 
-DISPLAY_PAGES_ON_MENU = False
+# DISPLAY_PAGES_ON_MENU = False
