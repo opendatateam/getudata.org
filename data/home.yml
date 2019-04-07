@@ -13,6 +13,12 @@ introduction:
       We wanted an open data portal for a more contributive and inclusive open data.
       As none satisfied our needs, we wrote a new one and udata was born.
   -
+    title: Who are we?
+    details: >
+      udata is developed by <a href="https://www.etalab.gouv.fr/">Etalab</a>, the
+      open data agency for french public administration.  The <a href="http://github.com/opendatateam/">opendatateam</a>
+      is open to new collaborators.
+  -
     title: How to contribute?
     details: >
       You can contribute by fixing bugs, implement new features or translating strings.
